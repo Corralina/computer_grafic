@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mouse</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   
+   $( "circle" ).click(function() {
+    cl=document.querySelector("#body").value;
+    cl2=document.querySelector("#head").value;;
+    $('body').append('<svg id="grade-def"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" style="stop-color:cl;stop-opacity:1" /><stop offset="100%" style="stop-color:cl2;stop-opacity:1" /></radialGradient></defs></svg>');
+    $( this ).attr('fill', "url(#grad)");
+   });
+   $( "rect" ).click(function() {
+    cl=document.querySelector("#body").value;
+      $( this ).attr('fill', cl);
+   });
+   $( "ellipse" ).click(function() {
+    cl=document.querySelector("#body").value;
+      $( this ).attr('fill', cl);
+   });
+   $( "line" ).click(function() {
+    cl=document.querySelector("#body").value;
+      $(this).attr("stroke",cl);
+   });
+   $( "path" ).click(function() {
+    cl=document.querySelector("#body").value;
+      $(this).attr("stroke",cl);
+   });
+});
+
+</script>
+<body>
+	<div>
+		<input type="color" id="head" name="head" value="#e66465">
+		<label for="head">Head</label>
+	</div>
+
+	<div>
+		<input type="color" id="body" name="body" value="#f6b73c">
+		<label for="body">Body</label>
+	</div>
+	<svg width="1500" height="650" fill>
+		<rect x = "0" y = "0" width = "1500" height = "650" fill = "#87CEEB"/>
+		<path d="M700 460 C 550 480, 600 220, 550 280" fill ="#87CEEB" stroke="white" stroke-width="8" />
+		<ellipse rx="25" ry="15" cx="725" cy="480" fill = "white" stroke="black"/>
+		<ellipse rx="20" ry="10" cx="725" cy="480" fill = "white" stroke="black"/>
+		<ellipse rx="25" ry="15" cx="675" cy="480" fill = "white" stroke="black"/>
+		<ellipse rx="20" ry="10" cx="675" cy="480" fill = "white" stroke="black"/>
+		<ellipse rx="60" ry="90" cx="700" cy="400" fill = "white" stroke="black"/>
+		<ellipse rx="40" ry="70" cx="700" cy="390" fill = "white" stroke="black"/>
+		<circle cx="765" cy="185" r="40"  fill = "white" stroke="black"/>
+		<circle cx="635" cy="185" r="40"  fill = "white" stroke="black"/>
+		<circle cx="765" cy="185" r="25"  fill = "white" stroke="black"/>
+		<circle cx="635" cy="185" r="25"  fill = "white" stroke="black"/>
+		<circle cx="700" cy="260" r="80"  fill = "white" stroke="black"/>
+		<ellipse rx="15" ry="20" cx="670" cy="250" fill = "white" stroke="black"/>
+		<ellipse rx="15" ry="20" cx="730" cy="250" fill = "white" stroke="black"/>
+		<circle cx="730" cy="250" r = "10" fill = "white" stroke = "black" stroke-width="2"/>
+		<circle cx="735" cy="245" r="5"  fill = "white" stroke="black"/>
+		<circle cx="670" cy="250" r = "10" fill = "white" stroke = "black" stroke-width="2"/>
+		<circle cx="675" cy="245" r="5"  fill = "white" stroke="black"/>
+		<line x1="700" y1="280" x2="700" y2="308" stroke="white" stroke-width="1" />
+		<ellipse rx="10" ry="5" cx="700" cy="280" fill = "white" stroke="black"/>
+		<!-- <path d="M680 300 C 690 310, 710 310, 720 300" fill ="white" stroke="black" stroke-width="1" /> -->
+		<line x1="660" y1="290" x2="600" y2="270" stroke="white" stroke-width="2" />
+		<line x1="660" y1="292" x2="600" y2="290" stroke="white" stroke-width="2" />
+		<line x1="660" y1="294" x2="600" y2="310" stroke="white" stroke-width="2" />
+		<line x1="740" y1="290" x2="800" y2="270" stroke="white" stroke-width="2" />
+		<line x1="740" y1="292" x2="800" y2="290" stroke="white" stroke-width="2" />
+		<line x1="740" y1="294" x2="800" y2="310" stroke="white" stroke-width="2" />
+		<line x1="665" y1="340" x2="630" y2="380" stroke="white" stroke-width="10" />
+		<line x1="735" y1="340" x2="770" y2="380" stroke="white" stroke-width="10" />
+
+		
+
+
+		
+
+
+	</svg>	
+</body>
+</html>

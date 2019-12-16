@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mouse</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $( "polyline" ).click(function() {
+    cl=document.querySelector("#body").value;
+    cl2=document.querySelector("#head").value;;
+    $('body').append('<svg id="grade-def"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" style="stop-color:cl;stop-opacity:1" /><stop offset="100%" style="stop-color:cl2;stop-opacity:1" /></radialGradient></defs></svg>');
+    $( this ).attr('fill', "url(#grad)");
+    });
+});
+</script>
+	<div>
+		<input type="color" id="head" name="head" value="#e66465">
+		<label for="head">Head</label>
+	</div>
+
+	<div>
+		<input type="color" id="body" name="body" value="#f6b73c">
+		<label for="body">Body</label>
+	</div>
+	<svg width="1500" height="650">
+		<rect x = "0" y = "0" width = "1500" height = "650" fill = "white" stroke="black"/>
+		<polyline points="500,300 530,370 560,392 585,480 565,490 595,490  600,400 620,405 630,495,  600,510 640,510 680,410, 710,410 790,410 810,480 790,490 820,490 840,410 853,407, 880,450 860,495 830,510 870,510 930,450 930,350 900,300 650,240 540,260 498,300" fill="white" stroke="black" stroke-width="4" />
+		<polyline points="480,270 550,300 600,300 670,260 640,200 610,180 540,180 510,200 479,270" fill="white" stroke="black"/>
+		<polyline points="530,280 550,295 600,295 615,275 600,250 545,250 530,280" fill="white" stroke="black"/>
+		<polyline points="550,270 560,280 580,280 590,270 580,260 560,260 550,270" fill="white" stroke="black"/>
+		<polyline points="570,250 570,260" stroke="black" stroke-width="4" stroke="black"/>
+		<polyline points="640,200 660,160 610,180" fill="white" stroke="black"/>
+		<polyline points="540,180 490,160 510,200" fill="white" stroke="black"/>
+		<polyline points="525,220 535,230 545,230 555,220 545,210 535,210 525,220" fill="white" stroke="black"/>
+		<polyline points="595,220 605,230 615,230 625,220 615,210 605,210 595,220" fill="white" stroke="black"/>
+		<polyline points="600,220 605,225 615,225 620,220 615,215 605,215 600,220" fill="white" stroke="black"/>
+		<polyline points="530,220 535,225 545,225 550,220 545,215 535,215 530,220" fill="white" stroke="black"/>
+		<polyline points="900,300 930,270 950,300 920,340 900,300" fill="white" stroke="black" stroke-width="4" />
+		<polyline points="930,270 960,240 980,260 950,300" fill="white" stroke="black" stroke-width="4" />
+		<polyline points="960,240 990,210 1000,235 980,260" fill="white" stroke="black" stroke-width="4" />
+		<polyline points="990,210 1025,177 1000,235" fill="white" stroke="black" stroke-width="4" />
+	</svg>
+</body>
+</html>

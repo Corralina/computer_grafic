@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas в HTML5</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="1600" height="1550"
+                style="background-color:#eee; border: 1px solid #ccc;">
+        </canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas"), 
+                context = canvas.getContext("2d");
+                my_gradient=context.createLinearGradient(50, 30, 1000, 1400);
+                //my_grad= context.createLinearGradient(50, 30, 1000, 1000);
+               
+            my_gradient.addColorStop(0,"#4169E1");
+            my_gradient.addColorStop(1,"#87CEEB");
+            context.fillStyle = my_gradient;
+            context.fillRect(0, 0, 1698, 400);
+            context.fill();
+
+
+            var cx=canvas.width/2;
+            var cy=canvas.height/4;
+
+
+            var a = 0.275, x = 300, y = -70 ;
+            var a2 = 0.310, x2 = 105, y2 = -50 ;
+
+
+            context.beginPath();
+            //context.moveTo(canvas.width/2, canvas.height/3.9);
+            //Проміння
+            for (i = 1; i<13 ; i++){
+                xold2=x2;
+                x2 = xold2* Math.cos(a2) - y2* Math.sin(a2);
+                y2 = xold2* Math.sin(a2) + y2* Math.cos(a2);
+                context.moveTo(x2+cx, cy-y2);
+                xold=x;
+                x = xold* Math.cos(a) - y* Math.sin(a);
+                y = xold* Math.sin(a) + y* Math.cos(a);
+                context.lineTo(x+cx, cy-y);
+                context.closePath();
+                context.lineWidth = 5;
+                context.strokeStyle = "#FFA500";
+                context.stroke();
+
+                
+            }
+
+            my_gradient.addColorStop(0,"#0B3B0B");
+            my_gradient.addColorStop(1,"#81F781");
+            context.fillStyle = my_gradient;
+            context.fillRect(1, 400, 1698, 250);
+            context.fill();
+
+
+            var cx=canvas.width/1.1;
+            var cy=canvas.height/100;
+
+
+            var a = 0.226, x = 100, y = -12 ;
+
+            context.beginPath();
+            context.moveTo(x+cx, cy-y);
+
+            for (i = 1; i<35 ; i++){
+                xold=x;
+                x = xold* Math.cos(a) - y* Math.sin(a);
+                y = xold* Math.sin(a) + y* Math.cos(a);
+                context.lineTo(x+ cx,cy-y);
+                
+            }
+            
+            context.lineTo(x+cx, cy-y);
+            context.closePath();
+            context.strokeStyle = "#FFA500";
+            context.fillStyle = "#FFFF00";
+            context.fill();
+            context.stroke();
+
+
+
+
+        var cx3=canvas.width/1.1;
+        var cy3=canvas.height/100;
+
+
+        var a3 = 0.275, x3 = 230, y3 = -20 ;
+        var a4 = 0.310, x4 = 105, y4 = -60 ;
+        context.beginPath();
+            //context.moveTo(canvas.width/2, canvas.height/3.9);
+            //Проміння
+            for (i = 1; i<26 ; i++){
+                xold4=x4;
+                x4 = xold4* Math.cos(a4) - y4* Math.sin(a4);
+                y4 = xold4* Math.sin(a4) + y4* Math.cos(a4);
+                context.moveTo(x4+cx3, cy3-y4);
+                xold3=x3;
+                x3 = xold3* Math.cos(a3) - y3* Math.sin(a3);
+                y3 = xold3* Math.sin(a3) + y3* Math.cos(a3);
+                context.lineTo(x3+cx3, cy3-y3);
+                context.closePath();
+                context.lineWidth = 5;
+                context.strokeStyle = "#FFA500";
+                context.stroke();
+
+                
+            }
+
+            my_gradient.addColorStop(0,"#0B3B0B");
+            my_gradient.addColorStop(1,"#81F781");
+            context.fillStyle = my_gradient;
+            context.fillRect(1, 400, 1698, 250);
+            context.fill();
+
+
+            var cx3=canvas.width/2;
+            var cy3=canvas.height/4;
+
+
+            var a3 = 0.226, x3 = 100, y3 = -12 ;
+
+            context.beginPath();
+            context.moveTo(x3+cx3, cy3-y3);
+            
+            for (i = 1; i<16 ; i++){
+                xold3=x3;
+                x3 = xold3* Math.cos(a3) - y3* Math.sin(a3);
+                y3 = xold3* Math.sin(a3) + y3* Math.cos(a3);
+                context.lineTo(x3+ cx3,cy3-y3);
+                
+            }
+            
+            context.lineTo(x3+cx3, cy3-y3);
+            context.closePath();
+            context.strokeStyle = "#FFA500";
+            context.fillStyle = "#FFFF00";
+            context.fill();
+            context.stroke();
+
+            
+
+
+            
+        </script>
+    </body>
+</html>

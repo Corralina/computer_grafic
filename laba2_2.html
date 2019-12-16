@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas в HTML5</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="1600" height="1550"
+                style="background-color:#eee; border: 1px solid #ccc;">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas"), 
+                context = canvas.getContext("2d");
+                my_gradient=context.createLinearGradient(50, 30, 2000, 1000);
+                gradient = context.createRadialGradient(810,420,3,810,420,125);
+                
+                //my_grad= context.createLinearGradient(50, 30, 1000, 1000);
+               
+            my_gradient.addColorStop(0,"#4169E1");
+            my_gradient.addColorStop(1,"#87CEEB");
+            context.fillStyle = my_gradient;
+            context.fillRect(0, 0, 1698, 400);
+            context.fill();
+
+            var cx=canvas.width/2;
+            var cy=canvas.height/4;
+
+
+            var a = 0.275, x = 300, y = -70 ;
+            var a2 = 0.310, x2 = 105, y2 = -50 ;
+            var b = "Text"
+
+            context.beginPath();
+            //context.moveTo(canvas.width/2, canvas.height/3.9);
+
+            for (i = 1; i<13 ; i++){
+                    xold2=x2;
+                    x2 = xold2* Math.cos(a2) - y2* Math.sin(a2);
+                    y2 = xold2* Math.sin(a2) + y2* Math.cos(a2);
+                    context.moveTo(x2+cx, cy-y2);
+                    context.font = "italic 30pt Arial";
+                    context.fillText(b, x+cx, cy-y);
+                    xold=x;
+                    x = xold* Math.cos(a) - y* Math.sin(a);
+                    y = xold* Math.sin(a) + y* Math.cos(a);
+                    context.lineTo(x+cx, cy-y);
+                    context.font = "italic 30pt Arial";
+                    context.fillText(b, x+cx, cy-y);
+                    context.closePath();
+                    context.fillStyle = "#FFA500";
+                    context.fill();
+                    context.lineWidth = 5;
+                    context.strokeStyle = "#FFA500";
+                    context.stroke();
+                
+            }
+
+            my_gradient.addColorStop(0,"#0B3B0B");
+            my_gradient.addColorStop(1,"#81F781");
+            context.fillStyle = my_gradient;
+            context.fillRect(1, 400, 1698, 250);
+            context.fill();
+
+
+            var cx=canvas.width/2;
+            var cy=canvas.height/4;
+
+
+            var a = 0.226, x = 100, y = -12 ;
+
+            context.beginPath();
+            context.moveTo(x+cx, cy-y);
+
+            for (i = 1; i<16 ; i++){
+                xold=x;
+                x = xold* Math.cos(a) - y* Math.sin(a);
+                y = xold* Math.sin(a) + y* Math.cos(a);
+                context.lineTo(x+ cx,cy-y);
+                
+            }
+            
+            context.lineTo(x+cx, cy-y);
+            context.closePath();
+            gradient.addColorStop(0,"#FFFF00");
+            gradient.addColorStop(1,"#F0FFFF");
+            context.strokeStyle = "#FFA500";
+            context.fillStyle = gradient;
+            context.fill();
+            context.stroke();
+
+            
+
+
+            
+        </script>
+    </body>
+</html>

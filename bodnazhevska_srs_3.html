@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+let colors = ["green", "orange", "yellow", "brown", "blue", "red", "pink"];
+$(window).load(function(){
+$("#canvas-area").click(function(event) {
+  $(this).find('#grad stop').eq(0).css('stop-color', colors[Math.floor(Math.random() * 7)]);
+  $(this).find('#grad stop').eq(1).css('stop-color', colors[Math.floor(Math.random() * 7)]);
+  $(event.target).attr('fill', 'url(#grad)');  
+})
+})
+</script>
+</head>
+<body>
+
+  <svg width="1000" height="3000" id = "canvas-area">
+    <defs>
+        <radialGradient id="grad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" style="stop-color:red;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:blue;stop-opacity:1" />
+      </radialGradient>
+  </defs>
+
+<g id="mouse">
+    <path d="M700 460 C 550 480, 600 220, 550 280" fill = none stroke="grey" stroke-width="8" />
+    <line x1="665" y1="340" x2="630" y2="380" stroke="grey" stroke-width="10" />
+    <line x1="735" y1="340" x2="770" y2="380" stroke="grey" stroke-width="10" />
+    <ellipse rx="25" ry="15" cx="725" cy="480" fill = "white" stroke="black"/>
+    <ellipse rx="20" ry="10" cx="725" cy="480" fill = "white" stroke="black"/>
+    <ellipse rx="25" ry="15" cx="675" cy="480" fill = "white" stroke="black"/>
+    <ellipse rx="20" ry="10" cx="675" cy="480" fill = "white" stroke="black"/>
+    <ellipse rx="60" ry="90" cx="700" cy="400" fill = "white" stroke="black"/>
+    <ellipse rx="40" ry="70" cx="700" cy="390" fill = "white" stroke="black"/>
+    <circle cx="765" cy="185" r="40"  fill = "white" stroke="black"/>
+    <circle cx="635" cy="185" r="40"  fill = "white" stroke="black"/>
+    <circle cx="765" cy="185" r="25"  fill = "white" stroke="black"/>
+    <circle cx="635" cy="185" r="25"  fill = "white" stroke="black"/>
+    <circle cx="700" cy="260" r="80"  fill = "white" stroke="black"/>
+    <ellipse rx="15" ry="20" cx="670" cy="250" fill = "white" stroke="black"/>
+    <ellipse rx="15" ry="20" cx="730" cy="250" fill = "white" stroke="black"/>
+    <circle cx="730" cy="250" r = "10" fill = "white" stroke = "black" stroke-width="2"/>
+    <circle cx="735" cy="245" r="5"  fill = "white" stroke="black"/>
+    <circle cx="670" cy="250" r = "10" fill = "white" stroke = "black" stroke-width="2"/>
+    <circle cx="675" cy="245" r="5"  fill = "white" stroke="black"/>
+    <line x1="700" y1="280" x2="700" y2="308" stroke="white" stroke-width="1" />
+    <ellipse rx="10" ry="5" cx="700" cy="280" fill = "white" stroke="black"/>
+    <path d="M680 300 C 690 310, 710 310, 720 300" fill ="white" stroke="black" stroke-width="1" />
+    <line x1="660" y1="290" x2="600" y2="270" stroke="white" stroke-width="2" />
+    <line x1="660" y1="292" x2="600" y2="290" stroke="white" stroke-width="2" />
+    <line x1="660" y1="294" x2="600" y2="310" stroke="white" stroke-width="2" />
+    <line x1="740" y1="290" x2="800" y2="270" stroke="white" stroke-width="2" />
+    <line x1="740" y1="292" x2="800" y2="290" stroke="white" stroke-width="2" />
+    <line x1="740" y1="294" x2="800" y2="310" stroke="white" stroke-width="2" />
+</g>
+
+
+<use  xlink:href="#mouse" transform="scale(2) translate(170 -40)" /> 
+
+      
+  <use  xlink:href="#mouse" transform="translate(0 1650) scale(1, -1)" />
+
+    
+      
+    <use  xlink:href="#mouse" transform="scale(0.5) translate(1070 790)" /> //mashtab
+
+      
+
+<use  xlink:href="#mouse" transform="translate(14 1300) rotate(-80)" /> 
+
+<!-- Дерево -->
+    <def>
+    <g id="leaves">
+      <ellipse id="leaf" rx="30" ry="20 " fill="#009900" stroke="#00ff00" stroke-width="2"/>//leaf
+      <polyline points="-9,22 5,-6 18,22 " fill="white" stroke="#00ff00" stroke-width="2"/>//white leaf
+    </g>
+    </def>  
+    <path d="M 350 350 L365 250 L320 230 L320 220 L370 230  L390 140 L415 140 L430 250 L480 225 L480 235 L435 280 L440 350 Z " stroke="#993300" stroke-width="3" fill="#663300" />
+    
+    <use  xlink:href="#leaves" transform="translate(400 110) " />
+    <use  xlink:href="#leaves" transform="translate(445 140) rotate(30) scale(1)" />
+    <use  xlink:href="#leaves" transform="translate(345 170) rotate(-40) scale(1.1)" />
+    <use  xlink:href="#leaves" transform="translate(320 200) rotate(-55) scale(0.8)" />
+    <use  xlink:href="#leaves" transform="translate(300 215) rotate(-70)" />  
+    <use  xlink:href="#leaves" transform="translate(335 265) rotate(-140)" />
+    <use  xlink:href="#leaves" transform="translate(465 190) rotate(50) scale(1.0)" />
+    <use  xlink:href="#leaves" transform="translate(510 235) rotate(90)" />
+    <use  xlink:href="#leaves" transform="translate(470 295) rotate(130) scale(0.8)" />
+             </svg>
+
+
